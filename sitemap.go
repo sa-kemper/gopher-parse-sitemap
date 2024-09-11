@@ -101,6 +101,20 @@ func ParseFromSite(url string, consumer EntryConsumer) error {
 	return Parse(res.Body, consumer)
 }
 
+// ParseFromSiteEx downloads sitemap from a site, parses it and for each sitemap
+// entry calls the consumer's function.
+//
+// It uses user provided http client instance instead of default http client
+func ParseFromSiteEx(url string, consumer EntryConsumer, client *http.Client) error {
+	res, err := client.Get(url)
+	if err != nil {
+		return err
+	}
+	defer res.Body.Close()
+
+	return Parse(res.Body, consumer)
+}
+
 // IndexEntryConsumer is a type represents consumer of parsed sitemaps indexes entries
 type IndexEntryConsumer func(IndexEntry) error
 
