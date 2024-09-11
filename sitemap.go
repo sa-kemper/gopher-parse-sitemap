@@ -135,3 +135,17 @@ func ParseIndexFromSite(sitemapURL string, consumer IndexEntryConsumer) error {
 
 	return ParseIndex(res.Body, consumer)
 }
+
+// ParseIndexFromSiteEx downloads sitemap index from a site, parses it and for each sitemap
+// index entry calls the consumer's function.
+//
+// It uses user provided http client instance instead of default http client
+func ParseIndexFromSiteEx(sitemapURL string, consumer IndexEntryConsumer, client *http.Client) error {
+	res, err := client.Get(sitemapURL)
+	if err != nil {
+		return err
+	}
+	defer res.Body.Close()
+
+	return ParseIndex(res.Body, consumer)
+}
