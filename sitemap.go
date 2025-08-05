@@ -11,7 +11,7 @@ import (
 )
 
 // Frequency is a type alias for change frequency.
-type Frequency = string
+type Frequency string
 
 // Change frequency constants set describes how frequently a page is changed.
 const (
@@ -36,7 +36,7 @@ const (
 // Be careful. Each call return new time.Time instance.
 //
 // GetChangeFrequency returns string value indicates how frequent the page is changed.
-// GetChangeFrequency returns non-nil string value. See Frequency consts set.
+// GetChangeFrequency returns non-nil string value. See Frequency const's set.
 //
 // GetPriority return priority of the page.
 // The valid value is between 0.0 and 1.0, the default value is 0.5.
