@@ -1,6 +1,8 @@
 # gopher-parse-sitemap
 
-[![Build Status](https://travis-ci.org/oxffaa/gopher-parse-sitemap.svg?branch=master)](https://travis-ci.org/oxffaa/gopher-parse-sitemap)
+[![Build Status](https://travis-ci.org/sa-kemper/gopher-parse-sitemap.svg?branch=master)](https://travis-ci.org/sa-kemper/gopher-parse-sitemap)
+
+This is a fork from [oxffaa's parser](https://github.com/oxffaa/gopher-parse-sitemap), I need it in one of my projects so I try to update it to the current go version (1.24 at the time of writing).
 
 A high effective golang library for parsing big-sized sitemaps and avoiding high memory usage. The sitemap parser was written on golang without external dependencies. See https://www.sitemaps.org/ for more information about the sitemap format.
 
@@ -36,16 +38,15 @@ But if you are pretty sure that you don't need to handle big-sized sitemaps, may
 Installation is pretty easy, just do:
 
 ```bash
-go get -u github.com/oxffaa/gopher-parse-sitemap
+go get -u github.com/sa-kemper/gopher-parse-sitemap
 ```
 
 After that import it:
 ```golang
-import "github.com/oxffaa/gopher-parse-sitemap"
+import "github.com/sa-kemper/gopher-parse-sitemap"
 ```
 
 Well done, you can start to create something awesome.
 
 ## Documentation
-
 Please, see [here](https://godoc.org/github.com/oxffaa/gopher-parse-sitemap) for documentation.
